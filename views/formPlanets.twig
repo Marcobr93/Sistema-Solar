@@ -1,0 +1,179 @@
+{% extends "layout.twig" %}
+
+{% block css %}
+    <link rel="stylesheet" href="{{ '' | url }}css/bootstrap-tokenfield.min.css">
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>{{ webInfo.h1 }}</h1>
+    <form method="post">
+
+    <div class="form-group {%  if errors['nombrePlaneta'] %} has-error{% endif %}">
+        <label for="nombrePlaneta">Nombre</label>
+        <input type="text" class="form-control" id="nombrePlaneta" name="nombrePlaneta" placeholder="Nombre del Planeta" value="{{ planet.nombrePlaneta }}">
+    </div>
+        {{ generateAlert(errors, 'nombrePlaneta') }}
+
+    <div class="row">
+       <div class="col-lg-6">
+             <div class="form-group">
+                 <label for="imagen">Imágen</label>
+                 <input type="text" class="form-control" id="imagen" name="imagen" placeholder="URL de la imagen" value="{{ planet.imagen }}">
+            </div>
+        </div>
+        <div class="col-lg-6">
+             <div class="form-group">
+                <label for="simbolo">Símbolo</label>
+                <input type="text" class="form-control" id="simbolo" name="simbolo" placeholder="URL del símbolo" value="{{ planet.simbolo }}">
+             </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6">
+           <div class="form-group {%  if errors['inclinacionOrbital'] %} has-error{% endif %}">
+                <label for="inclinacionOrbital">Inclinación Orbital(i)</label>
+                <input type="number" step="any" class="form-control" id="inclinacionOrbital" name="inclinacionOrbital" placeholder="Inclinación Orbital" value="{{ planet.inclinacionOrbital }}">
+           </div>
+            {{ generateAlert(errors, 'inclinacionOrbital') }}
+       </div>
+       <div class="col-lg-6">
+            <div class="form-group {%  if errors['inclinacionAxial'] %} has-error{% endif %}">
+                <label for="inclinacionAxial">Inclinación Axial</label>
+                <input type="number" step="any" class="form-control" id="inclinacionAxial" name="inclinacionAxial" placeholder="Inclinación Axial" value="{{ planet.inclinacionAxial }}">
+            </div>
+            {{ generateAlert(errors, 'inclinacionAxial') }}
+       </div>
+    </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group {%  if errors['periodoOrbitalSideral'] %} has-error{% endif %}">
+                    <label for="periodoOrbitalSideral">Periodo Orbital Sideral(días)</label>
+                    <input type="number" step="any" class="form-control" id="periodoOrbitalSideral" name="periodoOrbitalSideral" placeholder="Periodo Orbital Sideral" value="{{ planet.periodoOrbitalSideral }}">
+                </div>
+            {{ generateAlert(errors, 'periodoOrbitalSideral') }}
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group {%  if errors['periodoOrbitalSidonico'] %} has-error{% endif %}">
+                    <label for="periodoOrbitalSidonico">Periodo Orbital Sidónico(días)</label>
+                    <input type="number" step="any" class="form-control" id="periodoOrbitalSidonico" name="periodoOrbitalSidonico" placeholder="Periodo Orbital Sidónico" value="{{ planet.periodoOrbitalSidonico }}">
+                </div>
+            {{ generateAlert(errors, 'periodoOrbitalSidonico') }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group {%  if errors['velocidadOrbital'] %} has-error{% endif %}">
+                    <label for="velocidadOrbital">Velocidad Orbital(Km/s)</label>
+                    <input type="number" step="any" class="form-control" id="velocidadOrbital" name="velocidadOrbital" placeholder="Velocidad Orbital" value="{{ planet.velocidadOrbital }}">
+                </div>
+            {{ generateAlert(errors, 'velocidadOrbital') }}
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group {%  if errors['distanciaSol'] %} has-error{% endif %}">
+                    <label for="distanciaSol">Distancia del Sol(km)</label>
+                    <input type="number" step="any" class="form-control" id="distanciaSol" name="distanciaSol" placeholder="Distancia del Sol" value="{{ planet.distanciaSol }}">
+                 </div>
+            {{ generateAlert(errors, 'distanciaSol') }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group {%  if errors['afelio'] %} has-error{% endif %}">
+                    <label for="afelio">Afelio(ua)</label>
+                    <input type="number" step="any" class="form-control" id="afelio" name="afelio" placeholder="Afelio" value="{{ planet.afelio }}">
+                </div>
+            {{ generateAlert(errors, 'afelio') }}
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group {%  if errors['perihelio'] %} has-error{% endif %}">
+                    <label for="perihelio">Perihelio(ua)</label>
+                    <input type="number" step="any" class="form-control" id="perihelio" name="perihelio" placeholder="Perihelio" value="{{ planet.perihelio }}">
+                </div>
+            {{ generateAlert(errors, 'perihelio') }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group {%  if errors['diametro']%} has-error{% endif %}">
+                    <label for="diametro">Diametro(km)</label>
+                    <input type="number" step="any" class="form-control" id="diametro" name="diametro" placeholder="Diametro" value="{{ planet.diametro }}">
+                </div>
+            {{ generateAlert(errors, 'diametro') }}
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group {%  if errors['circunferencia'] %} has-error{% endif %}">
+                    <label for="circunferencia">Circunferencia(km)</label>
+                    <input type="number" step="any" class="form-control" id="circunferencia" name="circunferencia" placeholder="Circunferencia del Planeta" value="{{ planet.circunferencia }}">
+                </div>
+            {{ generateAlert(errors, 'circunferencia') }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group {%  if errors['superficieKm'] %} has-error{% endif %}">
+                    <label for="superficieKm">Superficie(en millones de km cuadrados)</label>
+                    <input type="number" step="any" class="form-control" id="superficieKm" name="superficieKm" placeholder="Superficie en Km" value="{{ planet.superficieKm }}">
+                </div>
+            {{ generateAlert(errors, 'superficieKm') }}
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group {%  if errors['relacionSuperficieTierra'] %} has-error{% endif %}">
+                    <label for="relacionSuperficieTierra">Relación superficie Tierra</label>
+                    <input type="number" step="any" class="form-control" id="relacionSuperficieTierra" name="relacionSuperficieTierra" placeholder="Relación superficie Tierra" value="{{ planet.relacionSuperficieTierra }}">
+                 </div>
+            {{ generateAlert(errors, 'relacionSuperficieTierra') }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+            <div class="form-group {%  if errors['volumen'] %} has-error{% endif %}">
+                <label for="volumen">Volumen(km cúbicos)</label>
+                <input type="text" class="form-control" id="volumen" name="volumen" placeholder="Volumen" value="{{ planet.volumen }}">
+            </div>
+            {{ generateAlert(errors, 'volumen') }}
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group {%  if errors['masa'] %} has-error{% endif %}">
+                    <label for="masa">Masa(en Kgs. masa)</label>
+                    <input type="text" class="form-control" id="masa" name="masa" placeholder="Masa" value="{{ planet.masa }}">
+                </div>
+            {{ generateAlert(errors, 'masa') }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="form-group {%  if errors['satelitesNaturales'] %} has-error{% endif %}">
+                    <label for="satelitesNaturales">Satélites Naturales(Lunas)</label>
+                    <input type="number" step="any" class="form-control" id="satelitesNaturales" name="satelitesNaturales" placeholder="Satélites Naturales" value="{{ planet.satelitesNaturales }}">
+                </div>
+            {{ generateAlert(errors, 'satelitesNaturales') }}
+            </div>
+            <div class="col-lg-6">
+                <div class="form-group {%  if errors['velocidadEscape']%} has-error{% endif %}">
+                    <label for="velocidadEscape">Velocidad de escape(Kms./s</label>
+                    <input type="number" step="any" class="form-control" id="velocidadEscape" name="velocidadEscape" placeholder="Velocidad de escape" value="{{ planet.velocidadEscape }}">
+                </div>
+            {{ generateAlert(errors, 'velocidadEscape') }}
+            </div>
+        </div>
+
+    <div class="form-group {%  if errors['albedo'] %} has-error{% endif %}">
+        <label for="albedo">Albedo</label>
+        <input type="number" step="any" class="form-control" id="albedo" name="albedo" placeholder="Albedo" value="{{ planet.albedo }}">
+    </div>
+            {{ generateAlert(errors, 'albedo') }}
+
+            <input type="hidden" name="_method" value="{{ webInfo.method }}">
+            <button type="submit" class="btn btn-default">{{ webInfo.submit }}</button>
+    </form>
+</div>
+{% endblock %}

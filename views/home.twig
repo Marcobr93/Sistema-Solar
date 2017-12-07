@@ -1,0 +1,47 @@
+{% extends 'layout.twig' %}
+
+{% block content %}
+<div class="container">
+
+    <h1>Planetas</h1>
+    <table class="table table-stripped">
+        <thead>
+        <tr>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Símbolo</th>
+            <th>Información</th>
+            <th>Editar</th>
+            <th>Borrar</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for planet in planets %}
+        <tr>
+            <td><a href="planets/{{ planet.id }}"><img src="{{ planet.imagen }}" alt="Logo de {{ planet.nombrePlaneta }}"></a></td>
+            <td><a href="planets/{{ planet.id }}">{{ planet.nombrePlaneta }}</a></td>
+            <td><a href="planets/{{ planet.id }}"><img src="{{ planet.simbolo }}" alt="Símbolo de {{ planet.simbolo }}"></a></td>
+            <td>
+                <a href="/planets/{{ planet.id }}">
+                    <span class="glyphicon glyphicon-info-sign info" aria-hidden="true"></span>
+                </a>
+            </td>
+            <td>
+                <a href="/planets/edit/{{ planet.id }}" class="editar btn btn-link">
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                </a>
+            </td>
+            <td>
+                <form action="/planets" method="POST">
+                    <input type="hidden" name="id" value="{{ planet.id }}">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <button type="submit" class="btn btn-link btn-alert"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+        <?php endwhile; ?>
+        </tbody>
+    </table>
+</div>
+{% endblock %}
