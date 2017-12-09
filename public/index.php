@@ -51,6 +51,15 @@ $router->filter('auth', function(){
     }
 });
 
+$router->group(['before' => 'auth'], function ($router){
+    $router->get('/planets/new', ['\App\Controllers\PlanetsController', 'getNew']);
+    $router->post('/planets/new', ['\App\Controllers\PlanetsController', 'postNew']);
+    $router->get('/planets/edit/{id}', ['\App\Controllers\PlanetsController', 'getEdit']);
+    $router->put('/planets/edit/{id}', ['\App\Controllers\PlanetsController', 'putEdit']);
+    $router->delete('/planets/', ['\App\Controllers\PlanetsController', 'deleteIndex']);
+    $router->get('/logout', ['\App\Controllers\HomeController', 'getLogout']);
+});
+
 // Filtro para aplicar a rutas a USUARIOS NO AUTENTICADOS
 // en el sistema
 $router->filter('noAuth', function(){
@@ -67,12 +76,11 @@ $router->group(['before' => 'noAuth'], function ($router){
     $router->post('/register', ['\App\Controllers\HomeController', 'postRegister']);
 });
 
-$router->group(['before' => 'auth'], function ($router){
-    $router->controller('/planets', App\Controllers\PlanetsController::class);
-    $router->get('/logout', ['\App\Controllers\HomeController', 'getLogout']);
-});
-
+// Rutas sin filtros
 $router->get('/',['\App\Controllers\HomeController', 'getIndex']);
+$router->get('/planets/{id}', ['\App\Controllers\PlanetsController', 'getIndex']);
+$router->post('/planets/{id}', ['\App\Controllers\PlanetsController', 'postIndex']);
+$router->controller('/api',App\Controllers\ApiController::class);
 
 $dispatcher = new Phroute\Phroute\Dispatcher($router->getData());
 
