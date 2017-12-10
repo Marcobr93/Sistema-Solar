@@ -1,5 +1,9 @@
 {% extends 'layout.twig' %}
 
+{% block css %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.0.6/sweetalert2.min.css" />
+{% endblock %}
+
 {% block content %}
 <div class="container">
 
@@ -32,10 +36,10 @@
                 </a>
             </td>
             <td>
-                <form action="/planets" method="POST">
+                <form action="/planets" method="POST" id="deletePlanet-{{ planet.id }}">
                     <input type="hidden" name="id" value="{{ planet.id }}">
                     <input type="hidden" name="_method" value="DELETE">
-                    <button type="submit" class="btn btn-link btn-alert"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
+                    <button type="submit" id="deleteForm" class="btn btn-link btn-alert" onclick="deletePlanet({{ planet.id }})"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></button>
                 </form>
             </td>
         </tr>
@@ -44,4 +48,9 @@
         </tbody>
     </table>
 </div>
+{% endblock %}
+
+{% block js %}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.0.6/sweetalert2.min.js"></script>
+    <script src="{{  '' | url }}js/app.js"></script>
 {% endblock %}

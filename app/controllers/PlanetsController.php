@@ -309,7 +309,7 @@ class PlanetsController extends BaseController {
             }
 
             //dameDato($planet);
-            return $this->render('planet.twig', [
+            return $this->render('planet/planet.twig', [
                 'planet' => $planet,
                 'webInfo'=> $webInfo]);
         }

@@ -14,8 +14,9 @@ $baseDir = str_replace(
     '',
     $_SERVER['SCRIPT_NAME']);
 
-$baseUrl = "http://" . $_SERVER['HTTP_HOST'] . $baseDir;
-
+$baseUrl = $_SERVER['HTTP_HOST'] . $baseDir;
+$protocol = (strpos($baseUrl, 'heroku')) ? "https://" : "http://";
+$baseUrl = $protocol.$baseUrl;
 define('BASE_URL', $baseUrl);
 
 if(file_exists(__DIR__.'/../.env')){

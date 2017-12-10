@@ -1,0 +1,72 @@
+{% extends "layout.twig" %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="row">
+                    <br>
+                    <div class="col-lg-2">
+                        <img src="{{ planet.imagen }}" alt="{{ planet.nombrePlaneta }}" class="logo">
+                    </div>
+                    <div class="col-lg-12 title">
+                        <div class="col-lg-10">
+                            <h1>{{ planet.nombrePlaneta|raw }}</h1>
+                        </div>
+                        <div class="col-lg-5">
+                            <p><strong>Símbolo: </strong> <img src="{{ planet.simbolo }}" alt="{{ planet.simbolo }}" class="logo"> </p>
+                            <p><strong>Relacion Superficie Tierra: </strong>{{  planet.relacionSuperficieTierra | raw }}</p>
+                        </div>
+                        <div class="col-lg-5">
+                            <p><strong>Masa: </strong> {{  planet.masa | raw }}</p>
+                            <p><strong>Volumen: </strong>{{  planet.volumen | raw }}</p>
+                        </div>
+                    </div>
+
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-lg-12 title">
+                        <div class="col-lg-5">
+                            <p><strong>Inclinación Orbital: </strong> {{  planet.inclinacionOrbital | raw }}</p>
+                            <p><strong>Inclinación Axial: </strong>{{  planet.inclinacionAxial | raw }}</p>
+                        </div>
+                        <div class="col-lg-5">
+                            <p><strong>Periodo Orbital Sideral: </strong> {{  planet.periodoOrbitalSideral | raw }}</p>
+                            <p><strong>Periodo Orbital Sidónico: </strong>{{  planet.periodoOrbitalSidonico | raw }}</p>
+                        </div>
+                        <div class="col-lg-5">
+                            <p><strong>Velocidad Orbital (Km/s): </strong> {{  planet.velocidadOrbital | raw }}</p>
+                            <p><strong>Distancia Sol (Km): </strong>{{  planet.distanciaSol | raw }}</p>
+                        </div>
+                        <div class="col-lg-5">
+                            <p><strong>Afelio (ua): </strong> {{  planet.afelio | raw }}</p>
+                            <p><strong>Perihelio (ua): </strong>{{  planet.perihelio | raw }}</p>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-lg-12 title">
+                        <div class="col-lg-5">
+                            <p><strong>Diámetro (km): </strong> {{  planet.diametro | raw }}</p>
+                            <p><strong>Circunferencia (km): </strong>{{  planet.circunferencia | raw }}</p>
+                        </div>
+                        <div class="col-lg-5">
+                            <p><strong>Superficie en Km: </strong> {{  planet.superficieKm | raw }}</p>
+                            <p><strong>Satélites Naturales: </strong>{{  planet.satelitesNaturales | raw }}</p>
+                        </div>
+                        <div class="col-lg-5">
+                            <p><strong>Velocidad de Escape (Kms/s): </strong> {{  planet.velocidadEscape | raw }}</p>
+                        </div>
+                        <div class="col-lg-5">
+                            <p><strong>Albedo: </strong> {{  planet.albedo | raw }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
