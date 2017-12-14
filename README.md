@@ -6,7 +6,7 @@ _**.env**_
 # **Creación de la base de datos**
 
 Utilizar el script **_sistemasolar.sql_** para construir las tablas de la base de datos, es **_necesario_** que previamente 
-cree una base de datos para donde **_importará este script._**
+cree una base de datos donde **_importará este script._**
 
 # **Composer**
 
