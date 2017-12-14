@@ -4,7 +4,7 @@
     <title>Starter Template for Bootstrap</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/app.css">
+    <link rel="stylesheet" href="public/css/app.css">
 </head>
 <body>
 <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -24,7 +24,7 @@
                 <li><a href="?route=add">Añadir Planeta</a></li>
                 <li><a href="#">Contacto</a></li>
             </ul>
-        </div><!--/.nav-collapse -->
+        </div>
     </div>
 </nav>
 
@@ -32,6 +32,6 @@
     <div class="jumbotron">
         <h1>Página no encontrada</h1>
     </div>
-</div><!-- /.container -->
+</div>
 </body>
 </html>

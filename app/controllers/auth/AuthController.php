@@ -1,5 +1,6 @@
 <?php
 namespace App\Controllers\Auth;
+
 use App\Controllers\BaseController;
 use App\Log;
 use App\Models\User;
@@ -7,11 +8,14 @@ use Sirius\Validation\Validator;
 class AuthController extends BaseController {
 
     public function getLogin(){
-        return $this->render('auth/login.twig',[]);
+        $webInfo = ['title' => 'Login de Usuarios'];
+        return $this->render('auth/login.twig',['webInfo' => $webInfo]);
     }
 
     public function postLogin(){
         $errors = [];
+        $webInfo = ['title' => 'Login de Usuarios'];
+
         $validator = new Validator();
 
         $validator->add('inputEmail:Email', 'required', [], 'El {label} es requerido');
@@ -31,9 +35,11 @@ class AuthController extends BaseController {
             $validator->addMessage('authError','Los datos son incorrectos');
         }
 
+        Log::logInfo('Intento fallido de login '. $_POST['inputEmail']);
+
         $errors = $validator->getMessages();
 
-        return $this->render('auth/login.twig', ['errors' => $errors]);
+        return $this->render('auth/login.twig', ['errors' => $errors, 'webInfo' => $webInfo]);
     }
 
     public function getLogout(){
@@ -41,6 +47,7 @@ class AuthController extends BaseController {
         unset($_SESSION['userId']);
         unset($_SESSION['userName']);
         unset($_SESSION['userEmail']);
+
         header("Location: ". BASE_URL);
     }
 }

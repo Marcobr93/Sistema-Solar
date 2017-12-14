@@ -18,6 +18,7 @@ class PlanetsController extends BaseController {
         $error = false;     // Será true si hay errores de validación.
 
         $webInfo = [
+            'title'     => 'Añadir Planeta',
             'h1'        => 'Añadir Planeta',
             'submit'    => 'Añadir',
             'method'    => 'POST'
@@ -44,6 +45,7 @@ class PlanetsController extends BaseController {
     public function postNew(){
 
         $webInfo = [
+            'title'     => 'Añadir Planeta',
             'h1'        => 'Añadir Planeta',
             'submit'    => 'Añadir',
             'method'    => 'POST'
@@ -147,6 +149,7 @@ class PlanetsController extends BaseController {
         $errors = array();  // Array donde se guardaran los errores de validación
 
         $webInfo = [
+            'title'     => 'Editar Planeta',
             'h1'        => 'Actualizar Planeta',
             'submit'    => 'Actualizar',
             'method'    => 'PUT'
@@ -179,6 +182,7 @@ class PlanetsController extends BaseController {
         $errors = array();
 
         $webInfo = [
+            'title'     => 'Editar Planeta',
             'h1'        => 'Actualizar Planeta',
             'submit'    => 'Actualizar',
             'method'    => 'PUT'
@@ -277,7 +281,6 @@ class PlanetsController extends BaseController {
      * @return string Render de la web con toda la información.
      *
      * Ruta [GET] planets/{id} que muestra la página de detalle de la distribución.
-     * todo: La vista de detalle está pendiente de implementar.
      *
      * @param id Código de la distribución.
      *
@@ -286,11 +289,10 @@ class PlanetsController extends BaseController {
     public function getIndex($id = null){
         if( is_null($id) ){
             $webInfo = [
-                'title' => 'Página de Inicio - Sistema Solar'
+                'title' => 'Sistema Solar'
             ];
 
             $planets = Planet::query()->orderBy('id','desc')->get();
-            //$planets = Planet::all();
 
             return $this->render('home.twig', [
                 'planets' => $planets,

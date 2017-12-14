@@ -5,12 +5,12 @@ _**.env**_
 
 # **Creación de la base de datos**
 
-Puedes utilizar el script **_sistemasolar.sql_** para construir las tablas de la base de datos, es necesario que previamente 
-usted cree una base de datos para importar este script.
+Utilizar el script **_sistemasolar.sql_** para construir las tablas de la base de datos, es **_necesario_** que previamente 
+cree una base de datos para donde **_importará este script._**
 
 # **Composer**
 
-Si usted tiene instalado en su sistema _Composer_, bastará con realizar el siguiente comando desde su terminal para 
+Si usted tiene instalado en su sistema **_Composer_**, bastará con realizar el siguiente comando desde su terminal para 
 instalar todas las dependencias necesarias del proyecto:
 ```
 composer install

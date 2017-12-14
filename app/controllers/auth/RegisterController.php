@@ -8,12 +8,15 @@ class RegisterController extends BaseController {
 
     public function getRegister()
     {
-        return $this->render('auth/register.twig', []);
+        $webInfo = ['title' => 'Registro de Usuarios'];
+        return $this->render('auth/register.twig', ['webInfo' => $webInfo]);
     }
 
     public function postRegister()
     {
         $errors = [];
+        $webInfo = ['title' => 'Registro de Usuarios'];
+
         $validator = new Validator();
 
         $validator->add('inputName:Nombre', 'required', [], 'El {label} es obligatorio');
@@ -40,6 +43,6 @@ class RegisterController extends BaseController {
         } else {
             $errors = $validator->getMessages();
         }
-        return $this->render('auth/register.twig', ['errors' => $errors]);
+        return $this->render('auth/register.twig', ['errors' => $errors, 'webInfo' => $webInfo]);
     }
 }
