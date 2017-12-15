@@ -1,12 +1,13 @@
-# **Instalación**
-
-Configurar el archivo _**.env.example**_ con tus datos de acceso a la base de datos. Renombrar el _**.env.example**_ a 
-_**.env**_
-
 # **Creación de la base de datos**
 
 Utilizar el script **_sistemasolar.sql_** para construir las tablas de la base de datos, es **_necesario_** que previamente 
 cree una base de datos donde **_importará este script._**
+
+# **Instalación**
+
+Configurar el archivo _**.env.example**_ con tus datos de acceso a la base de datos que has creado. Renombrar el _**.env.example**_ a 
+_**.env**_
+
 
 # **Composer**
 
@@ -30,22 +31,28 @@ Una vez realizados los pasos anteriores, ya estará listo para utilizar la aplic
 
 # **Manual de uso de la aplicación**
 
-Cuando ingrese en la página, usted no estará logeado en ningún usuario, por lo que lo único que podrá hacer es ver la 
-la información de cada planeta y poder usar la pestaña de _Acceso_ para logearse o registrarse en la página y poder
-realizar el resto de usos.
+Cuando ingrese en la página, usted no estará logeado en ningún usuario, por lo que lo sólo podrá ver la 
+la **_información_** de cada planeta, usar el botón de **_Sistema Solar_** para ver la información que allí se encuentra
+y poder usar la pestaña de **_Acceso_**, donde podrá logearse o registrarse en la página y poder realizar el resto de
+funciones.
 
 ## **Menú de navegación**
 
-**Se compone de 3 apartados:**
+**Se compone de 4 apartados:**
 
-### **Sistema Solar**
+### **Inicio**
 
-Si usted le da _click_ a Sistema Solar en cualquier lugar de la página, este le devolverá al menú principal de la página,
-donde están la lista de planetas.
+Si usted le da _click_ a **_Inicio_** en cualquier lugar de la página, este le devolverá al menú principal, donde está 
+la lista de planetas.
 
 ### **Añadir Planeta**
 
-Si usted le da _click_ a _**Añadir Planeta**_ la página entrará en una nueva sección donde podrá añadir un Planeta nuevo.
+Si usted le da _click_ a _**Añadir Planeta**_, la página entrará en una nueva sección donde podrá añadir un Planeta nuevo.
+
+### **Sistema Solar**
+
+Si usted le da _click_ a _**Sistema Solar**_ , la página entrará en una nueva sección donde obtendrá información acerca
+del Sistema Solar.
 
 ### **Acceso**
 
@@ -74,9 +81,6 @@ Esta sección no está implementada aún, en un futuro permitirá recuperar la c
 
 ## **Uso del resto de funciones**
 
-Como he mencionado anteriormente, si usted no está logeado sólo podrá utilizar la sección de ver información de un
-planeta y la opción de **_logearse_** o **_registrarse_** en la página.
-
 ### **Información**
 
 Para ver la información de cada Planeta tiene **4 opciones:**
@@ -86,7 +90,7 @@ Para ver la información de cada Planeta tiene **4 opciones:**
 - _Click en el símbolo del Planeta._
 - _Click en el botón de _información_ del Planeta._
 
-Una vez logeado, podrá utilizar el resto de las funciones:
+**Una vez logeado, podrá utilizar el resto de las funciones:**
 
 ### **Editar**
 

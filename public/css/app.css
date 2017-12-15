@@ -1,12 +1,27 @@
 body{
     padding-top: 50px;
 }
-.editar{
+
+#layout {
+    background-color: #1A1715;
+}
+#blanco {
+    color:whitesmoke;
+}
+
+#cuerpoPagina {
+    background-color: whitesmoke;
+}
+#body {
+    background-color: lightgrey;
+}
+
+#editar{
     color: green;
 }
-.borrar{
+#deleteForm{
     color: red;
 }
-.info{
+#info{
     color: deepskyblue;
 }

@@ -79,6 +79,7 @@ $router->group(['before' => 'noAuth'], function ($router){
 
 // Rutas sin filtros
 $router->get('/',['\App\Controllers\HomeController', 'getIndex']);
+$router->get('/solarSystem/sistemaSolar',['\App\Controllers\HomeController', 'getSolarSystem']);
 $router->get('/planets/{id}', ['\App\Controllers\PlanetsController', 'getIndex']);
 $router->post('/planets/{id}', ['\App\Controllers\PlanetsController', 'postIndex']);
 $router->controller('/api',App\Controllers\ApiController::class);

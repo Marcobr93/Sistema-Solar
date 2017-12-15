@@ -60,4 +60,9 @@ class HomeController extends BaseController {
         return $auth->getLogout();
     }
 
+    public function getSolarSystem(){
+        $solarSystem = new SolarSystemController();
+        return $solarSystem->getSistemaSolar();
+    }
+
 }

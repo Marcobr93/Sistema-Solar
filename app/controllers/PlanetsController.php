@@ -8,7 +8,7 @@ use Sirius\Validation\Validator;
 class PlanetsController extends BaseController {
 
     /**
-     * Ruta [GET] /planets/new que muestra el formulario de añadir una nueva distribución.
+     * Ruta [GET] /planets/new que muestra el formulario de añadir un nuevo planeta.
      *
      * @return string Render de la web con toda la información.
      */
@@ -38,7 +38,7 @@ class PlanetsController extends BaseController {
     }
 
     /**
-     * Ruta [POST] /planets/new que procesa la introducción de una nueva distribución.
+     * Ruta [POST] /planets/new que procesa la introducción de un nuevo Planeta.
      *
      * @return string Render de la web con toda la información.
      */
@@ -138,9 +138,9 @@ class PlanetsController extends BaseController {
     }
 
     /**
-     * Ruta [GET] /planets/edit/{id} que muestra el formulario de actualización de una nueva distribución.
+     * Ruta [GET] /planets/edit/{id} que muestra el formulario de actualización del planeta seleccionado
      *
-     * @param id Código de la distribución.
+     * @param id Código del planeta.
      *
      * @return string Render de la web con toda la información.
      */
@@ -170,10 +170,10 @@ class PlanetsController extends BaseController {
     }
 
     /**
-     * Ruta [PUT] /planets/edit/{id} que actualiza toda la información de una distribución. Se usa el verbo
+     * Ruta [PUT] /planets/edit/{id} que actualiza toda la información del planeta. Se usa el verbo
      * put porque la actualización se realiza en todos los campos de la base de datos.
      *
-     * @param id Código de la distribución.
+     * @param id Código del planeta.
      *
      * @return string Render de la web con toda la información.
      */
@@ -276,20 +276,20 @@ class PlanetsController extends BaseController {
 
 
     /**
-     * Ruta raíz [GET] /planets para la dirección home de la aplicación. En este caso se muestra la lista de distribuciones.
+     * Ruta raíz [GET] /planets para la dirección home de la aplicación. En este caso se muestra la lista de planetas.
      *
      * @return string Render de la web con toda la información.
      *
-     * Ruta [GET] planets/{id} que muestra la página de detalle de la distribución.
+     * Ruta [GET] planets/{id} que muestra la página de detalle del planeta.
      *
-     * @param id Código de la distribución.
+     * @param id Código del planeta.
      *
      * @return string Render de la web con toda la información.
      */
     public function getIndex($id = null){
         if( is_null($id) ){
             $webInfo = [
-                'title' => 'Sistema Solar'
+                'title' => 'Inicio'
             ];
 
             $planets = Planet::query()->orderBy('id','desc')->get();
@@ -319,7 +319,7 @@ class PlanetsController extends BaseController {
     }
 
     /**
-     * Ruta [DELETE] /planets/delete para eliminar la distribución con el código pasado
+     * Ruta [DELETE] /planets/delete para eliminar el planeta con el código pasado
      */
     public function deleteIndex(){
         $id = $_REQUEST['id'];
