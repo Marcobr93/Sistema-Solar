@@ -99,3 +99,7 @@ Le permite editar la información de un Planeta ya creado.
 ### **Borrar**
 
 Le permite borrar un Planeta ya creado.
+
+## Enlace al despliegue del proyecto en Heroku
+
+`https://sheltered-earth-72241.herokuapp.com/`
